@@ -51,7 +51,7 @@ class SignArt
         );
         $fileimage = $this->buildPath(
             $this->getDirectory(),
-            random_int(100, 1000000) . '.png'
+            base64_encode($text) . '.png'
         );
         imagepng($this->image, $fileimage);
         imagedestroy($this->image);
@@ -65,7 +65,7 @@ class SignArt
      *
      * @return string
      */
-    public function buildPath(...$element)
+    private function buildPath(...$element)
     {
         return join(DIRECTORY_SEPARATOR, $element);
     }
@@ -74,7 +74,7 @@ class SignArt
      * @return mixed
      * @throws \Exception
      */
-    public function getDirectory()
+    private function getDirectory()
     {
         if (!empty($this->imageDirectory)) {
             return $this->imageDirectory;
@@ -83,16 +83,28 @@ class SignArt
         }
     }
 
-    public function getRandImg()
+    private function getRandImg()
     {
-        $base_art    = include '../config/Config.php';
-        $datas       = $base_art[array_rand($base_art)];
+        $datas       = $this->getImages()[array_rand($this->getImages())];
         $files       = $this->buildPath(
             $this->getDirectory(),
-            $datas['imageFile']
+            $datas[0]
         );
         $this->image = imagecreatefrompng($files);
         $this->data  = $datas;
+    }
+
+    /**
+     * @return mixed
+     * @throws \Exception
+     */
+    private function getImages()
+    {
+        if (!empty($this->images)) {
+            return $this->images;
+        } else {
+            throw new \Exception('Images is empty.');
+        }
     }
 
     /**
@@ -109,18 +121,23 @@ class SignArt
      * registerImages()
      *
      * @param array $image
+     *
+     * @return $this
      */
-    public function addImages(array $image)
+    public function addImage(array $image)
     {
         $this->images[] = $image;
+        return $this;
     }
 
     /**
-     * @return mixed
+     * addImageBase()
+     *
+     * @param array $image
      */
-    public function getImages()
+    public function addImageBase(array $image)
     {
-        return $this->images;
+        $this->images = $image;
     }
 
     /**

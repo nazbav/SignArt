@@ -11,7 +11,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "joker2620\\": "src/"
+      "joker2620\\SingArt\\": "src/"
     }
   },
   "require": {
