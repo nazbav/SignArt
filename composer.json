@@ -1,0 +1,20 @@
+{
+  "name": "joker2620/sing-art",
+  "description": "Генератор сигн",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "joker2620",
+      "email": "joker2000joker@mail.ru"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "joker2620\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=7.1"
+  }
+}
