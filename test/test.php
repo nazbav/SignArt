@@ -2,11 +2,11 @@
 declare(strict_types = 1);
 /**
  * File: test..php;
- * Author: Joker2620;
+ * Author: nazbav;
  * Date: 21.04.2018;
  * Time: 14:00;
  */
-use joker2620\SingArt\SignArt;
+use nazbav\SingArt\SignArt;
 
 include_once '../vendor/autoload.php';
 

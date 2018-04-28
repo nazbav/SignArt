@@ -1,17 +1,17 @@
 {
-  "name": "joker2620/sing-art",
+  "name": "nazbav/sing-art",
   "description": "Генератор сигн",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [
     {
-      "name": "joker2620",
+      "name": "nazbav",
       "email": "joker2000joker@mail.ru"
     }
   ],
   "autoload": {
     "psr-4": {
-      "joker2620\\SingArt\\": "src/"
+      "nazbav\\SingArt\\": "src/"
     }
   },
   "require": {

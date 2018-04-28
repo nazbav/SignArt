@@ -2,13 +2,13 @@
 declare(strict_types = 1);
 
 
-namespace joker2620\SingArt;
+namespace nazbav\SingArt;
 
 
 /**
  * Class SignArt
  *
- * @package joker2620\Source\Plugins\AutoSing
+ * @package nazbav\Source\Plugins\AutoSing
  */
 class SignArt
 {
