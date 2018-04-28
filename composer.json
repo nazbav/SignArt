@@ -2,6 +2,8 @@
   "name": "nazbav/sing-art",
   "description": "Генератор сигн",
   "minimum-stability": "stable",
+  "version": "1.0.0",
+  "type": "library",
   "license": "MIT",
   "authors": [
     {
